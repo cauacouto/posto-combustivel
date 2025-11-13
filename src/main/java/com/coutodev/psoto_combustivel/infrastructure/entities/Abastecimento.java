@@ -1,0 +1,31 @@
+package com.coutodev.psoto_combustivel.infrastructure.entities;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+@Entity
+@Table(name = "abastecimento")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Builder
+public class Abastecimento {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @OneToOne
+    @JoinColumn(name = "bomba_combustivel_id")
+    private BombasDeCombustivel bombasDeCombustivel;
+    @Column(name = "data_Abastecimento")
+    private LocalDate dataAbastecimento;
+    @Column(name = "valor_Total")
+    private BigDecimal valorTotal;
+    @Column(name = "quantidade_Litros")
+    private Long quantidadeLitros;
+
+}
