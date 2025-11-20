@@ -25,7 +25,6 @@ public class TipoDeCombustivelService {
     }
 
     public List<TipoDeCombustivel> buscarTipoDeCombustivel(){
-
         return tipoDeCombustivelRepository.findAll();
     }
 
